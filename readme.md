@@ -1,7 +1,7 @@
-# Groq Function Chat
+# Groq Function Chat + SQLite DB Support (w/ Llama3 LLM)
 
 ## Overview
-Groq Function Chat is a Python-based console application that uses the Groq API to perform arithmetic operations such as addition, subtraction, multiplication, and division. It demonstrates how to leverage Groq's function-calling capabilities in a conversational environment.
+Groq Function Chat is a Python-based console application that uses the Groq API to perform arithmetic operations such as addition, subtraction, multiplication, and division. It demonstrates how to leverage Groq's function-calling capabilities in a conversational environment. Groq API uses LLama 3 for the prompts and functions.
 
 ---
 
@@ -37,11 +37,14 @@ pip install requests python-dotenv
 ```
 
 ### 3. Set Up the Environment Variables
-Create a `.env` file in the project directory and add your Groq API key:
+Create a `.env` file in the project directory and add your Groq API key & Database Information:
 ```env
 API_KEY=your_actual_api_key_here
 ```
 Replace `your_actual_api_key_here` with your actual Groq API key.
+
+DATABASE_URL=sqlite:///results.db  # Optional: Change if using a different DB
+
 
 ---
 
@@ -90,24 +93,19 @@ Goodbye!
 The `call_groq_function` function interacts with the Groq API to parse user input and call the appropriate function.
 
 ### 3. Console Interface
-The `console_chat` function handles the interactive user experience.
+The console_chat function handles the interactive user experience and stores results in the database after each calculation.
+
+### 4. Database Integration
+The CalculationResult model is used to store results of operations in an SQLite database.
+The database is configured through the DATABASE_URL environment variable.
+
 
 ---
 
 ## Notes
-- Ensure the `.env` file is in the same directory as the script.
+- Ensure that the 'env' has your GROQ API key in it.
 - The application gracefully handles division by zero with an error message.
 - This project demonstrates how to integrate Groq's advanced API features into a Python application.
-
----
-
-## License
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
-
----
-
-## Contributions
-Contributions are welcome! Feel free to submit issues or pull requests to enhance the functionality.
 
 ---
 
@@ -115,6 +113,7 @@ Contributions are welcome! Feel free to submit issues or pull requests to enhanc
 - [Groq API Documentation](https://api.groq.com)
 - [Requests Library Documentation](https://docs.python-requests.org/)
 - [Python-dotenv Documentation](https://pypi.org/project/python-dotenv/)
+- [SQLite Browser Documentation]([https://pypi.org/project/python-dotenv/](https://github.com/sqlitebrowser/sqlitebrowser/wiki))
 
 ---
 
