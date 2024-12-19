@@ -14,9 +14,9 @@ load_dotenv()
 API_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 API_KEY = os.getenv("API_KEY")  # Ensure your .env file contains API_KEY
 
-# SQLAlchemy setup for PostgreSQL
+# SQLAlchemy setup
 Base = declarative_base()
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/mydatabase")  # Default to PostgreSQL if DATABASE_URL is not set
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///results.db")  # Default to SQLite if DATABASE_URL is not set
 
 # Define the Result model to store the calculation results
 class CalculationResult(Base):

@@ -1,4 +1,4 @@
-# Groq Function Chat + SQLite DB Support (w/ Llama3 LLM)
+# Groq Function Chat + PostgreSQL DB Support (w/ Llama3 LLM)
 
 ## Overview
 Groq Function Chat is a Python-based console application that uses the Groq API to perform arithmetic operations such as addition, subtraction, multiplication, and division. It demonstrates how to leverage Groq's function-calling capabilities in a conversational environment. Groq API uses LLama 3 for the prompts and functions.
@@ -96,7 +96,7 @@ The `call_groq_function` function interacts with the Groq API to parse user inpu
 The console_chat function handles the interactive user experience and stores results in the database after each calculation.
 
 ### 4. Database Integration
-The CalculationResult model is used to store results of operations in an SQLite database.
+The CalculationResult model is used to store results of operations in an PostgreSQL database.
 The database is configured through the DATABASE_URL environment variable.
 
 
@@ -113,7 +113,7 @@ The database is configured through the DATABASE_URL environment variable.
 - [Groq API Documentation](https://api.groq.com)
 - [Requests Library Documentation](https://docs.python-requests.org/)
 - [Python-dotenv Documentation](https://pypi.org/project/python-dotenv/)
-- [SQLite Browser Documentation]([https://pypi.org/project/python-dotenv/](https://github.com/sqlitebrowser/sqlitebrowser/wiki))
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 
 ---
 
