@@ -17,6 +17,7 @@ Groq Function Chat is a Python-based console application that uses the Groq API 
 - Python 3.7+
 - `requests` library
 - `python-dotenv` library
+- `sqlite db browser` https://sqlitebrowser.org/dl/
 
 ---
 
