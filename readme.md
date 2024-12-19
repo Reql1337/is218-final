@@ -1,4 +1,7 @@
-# Groq Function Chat + PostgreSQL DB Support (w/ Llama3 LLM)
+# Groq Function Chat + SQLite DB Support (w/ Llama3 LLM)
+
+I was not committing while working on this project and that's on me, but I hope I dont lose points for that.
+- Youtube Video: (https://youtu.be/F_GF3WXPH0A)
 
 ## Overview
 Groq Function Chat is a Python-based console application that uses the Groq API to perform arithmetic operations such as addition, subtraction, multiplication, and division. It demonstrates how to leverage Groq's function-calling capabilities in a conversational environment. Groq API uses LLama 3 for the prompts and functions.
@@ -40,10 +43,11 @@ pip install requests python-dotenv
 Create a `.env` file in the project directory and add your Groq API key & Database Information:
 ```env
 API_KEY=your_actual_api_key_here
+DATABASE_URL=sqlite:///results.db # Optional: Change if using a different DB
 ```
-Replace `your_actual_api_key_here` with your actual Groq API key.
+Replace `your_actual_api_key_here` with your actual Groq API key. 
 
-DATABASE_URL=sqlite:///results.db  # Optional: Change if using a different DB
+
 
 
 ---
@@ -113,7 +117,7 @@ The database is configured through the DATABASE_URL environment variable.
 - [Groq API Documentation](https://api.groq.com)
 - [Requests Library Documentation](https://docs.python-requests.org/)
 - [Python-dotenv Documentation](https://pypi.org/project/python-dotenv/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [SQLite DB Browser Documentation](https://github.com/sqlitebrowser/sqlitebrowser/wiki)
 
 ---
 
